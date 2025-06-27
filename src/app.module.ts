@@ -19,7 +19,7 @@ import { ConfigModule } from '@nestjs/config';
       // entities: [Payment],
       // synchronize: true,
       autoLoadEntities: true,
-      synchronize: false,
+      synchronize: true,
     }),
     BookingModule,
     PaymentModule,

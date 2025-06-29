@@ -19,7 +19,7 @@ import { User } from './users/entities/user.entity';
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_DBNAME,
       entities: [Payment, User],
-      synchronize: false,
+      synchronize: true,
     }),
     PaymentModule,
     UsersModule,

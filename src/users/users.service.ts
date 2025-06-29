@@ -14,7 +14,10 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const user = plainToInstance(User, createUserDto);
+    const user = plainToInstance(User, {
+      ...createUserDto,
+      isMarried: String(createUserDto.isMarried).toLowerCase() === 'true',
+    });
     const savedUser = await this.usersRepo.save(user);
     return savedUser;
   }
